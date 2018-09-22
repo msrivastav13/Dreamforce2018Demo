@@ -33,7 +33,7 @@
                     title: {
                         display: true,
                         text: 'Questions Per Topic',
-                        fontSize : 20,
+                        fontSize : 40,
                         fontFamily : 'verdana',
                         fontStyle : 'light'
                     }

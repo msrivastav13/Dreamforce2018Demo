@@ -3,18 +3,15 @@
 		var params = event.getParam('arguments');
 		var callback;
 		var searchString ;
-		var searchTag ;
         if (params) {
 			callback = params.callback;
 			searchString = params.searchString;
-			searchTag = params.searchTag;
         }
         // Get server action service
         var server = component.find('server');
 		var action = component.get("c.searchStackexchangeAPI");
 		var parameters = {  
-			searchStr : searchString ,
-			tags : searchTag
+			searchStr : searchString 
         }
         server.callServerPromise(
             action, // Server-side action

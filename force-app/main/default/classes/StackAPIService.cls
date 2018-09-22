@@ -18,7 +18,7 @@ public with sharing class StackAPIService {
 	 * @param  tags  SemiColon delimited list of Tags
 	 */
 
-    public static String searchStackAPI(String searchStr,String tags){
+    public static String searchStackAPI(String searchStr){
         String endPoint = API_AUTH + SEARCH_API + '?order=desc&sort=activity&site='+Site;
         endPoint = endPoint + '&q=' + EncodingUtil.urlEncode(searchStr, 'UTF-8') + '&filter=withbody';
         HTTPResponse res = apiService(endPoint,'GET',null,null);

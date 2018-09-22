@@ -4,8 +4,6 @@
     <aura:attribute name="recordId" type="Id" />
     <aura:attribute name="simpleRecord" type="Object"/>
     <aura:attribute name="recordError" type="String"/>
-
-    <aura:handler name="init" value="{!this}" action="{!c.onInit}"/>
     
 	<div onkeyup="{! c.handleKeyUp }">
         <lightning:input
@@ -17,12 +15,14 @@
     </div>
 
     <c:StackAPIService aura:id="stackAPICmp" />
+    <c:ServerActionService aura:id="server"/>
 
     <force:recordData aura:id="recordLoader"
         recordId="{!v.recordId}"
         targetFields="{!v.simpleRecord}"
         targetError="{!v.recordError}"
         layoutType="FULL"
+        recordUpdated="{!c.handleRecordUpdated}"
     />
 
     <lightning:accordion >

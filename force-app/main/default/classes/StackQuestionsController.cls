@@ -1,9 +1,9 @@
 public with sharing class StackQuestionsController {
 
     @AuraEnabled
-    public static string searchStackexchangeAPI(String searchStr,String tags){
+    public static string searchStackexchangeAPI(String searchStr){
         try{
-            return StackAPIService.searchStackAPI(searchStr,tags);
+            return StackAPIService.searchStackAPI(searchStr);
         }catch(Exception e ){
             throw new AuraHandledException('Search API Failure'+e.getMessage());
         }

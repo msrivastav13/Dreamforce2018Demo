@@ -1,7 +1,6 @@
 <aura:component controller="StackQuestionsController">
 	<aura:method name="searchStackExchange" description="Search Stackexchange API">
                 <aura:attribute name="searchString" type="String" />
-                <aura:attribute name="tags" type="String" />
                 <aura:attribute name="callback" type="Function" />
         </aura:method>
         <aura:method name="getTagInfo" description="Gets all the Tag Info From Stackexchange API">
