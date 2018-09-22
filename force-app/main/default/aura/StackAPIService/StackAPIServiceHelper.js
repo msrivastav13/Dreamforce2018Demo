@@ -9,34 +9,28 @@
 			searchString = params.searchString;
 			searchTag = params.searchTag;
         }
-
+        // Get server action service
+        var server = component.find('server');
 		var action = component.get("c.searchStackexchangeAPI");
-		var param = {  
+		var parameters = {  
 			searchStr : searchString ,
 			tags : searchTag
-		}
-		action.setParams(param);
-        action.setCallback(this, function(response) {
-            var state = response.getState();
-            if (state === "SUCCESS") {
-                if (callback) callback(response.getReturnValue());
-            }
-            else if (state === "INCOMPLETE") {
-                // do something
-            }
-            else if (state === "ERROR") {
-                var errors = response.getError();
-                if (errors) {
-                    if (errors[0] && errors[0].message) {
-                        console.log("Error message: " +
-                          errors[0].message);
-                    }
-                } else {
-                    console.log("Unknown error");
-                }
-            }
-        });
-        $A.enqueueAction(action);
+        }
+        server.callServerPromise(
+            action, // Server-side action
+            parameters, // Action parameters
+            false, // Disable cache
+            false, // Disable built-in error notification
+            false, // Disable background
+            false // Not abortable
+        ).then($A.getCallback(response => {
+            // Handle response
+            console.log(response);
+            if (callback) callback(response);
+        }))
+        .catch($A.getCallback(errors => {
+            // Handle errors
+        }));
     },
 
     getTagDetails : function (component,event){
@@ -45,27 +39,21 @@
         if(params){
             callback = params.callback;
         }
+        var server = component.find('server');
         var action = component.get("c.getTagReportingData");
-        action.setCallback(this, function(response) {
-            var state = response.getState();
-            if (state === "SUCCESS") {
-                if (callback) callback(response.getReturnValue());
-            }
-            else if (state === "INCOMPLETE") {
-                // do something
-            }
-            else if (state === "ERROR") {
-                var errors = response.getError();
-                if (errors) {
-                    if (errors[0] && errors[0].message) {
-                        console.log("Error message: " +
-                          errors[0].message);
-                    }
-                } else {
-                    console.log("Unknown error");
-                }
-            }
-        });
-        $A.enqueueAction(action);
+        server.callServerPromise(
+            action, // Server-side action
+            null, // Action parameters
+            false, // Disable cache
+            false, // Disable built-in error notification
+            false, // Disable background
+            false // Not abortable
+        ).then($A.getCallback(response => {
+            // Handle response
+            if (callback) callback(response);
+        }))
+        .catch($A.getCallback(errors => {
+            // Handle errors
+        }));
     }
 })

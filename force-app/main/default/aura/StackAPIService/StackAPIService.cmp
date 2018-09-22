@@ -7,4 +7,5 @@
         <aura:method name="getTagInfo" description="Gets all the Tag Info From Stackexchange API">
                 <aura:attribute name="callback" type="Function" />
         </aura:method>
+        <c:ServerActionService aura:id="server"/>
 </aura:component>
