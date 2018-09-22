@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Salesforce Stackexchange</fullName>
+    <types>
+        <members>StackAPIService</members>
+        <members>StackQuestionsController</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>StackAPIService</members>
+        <members>StackExchangeSearch</members>
+        <members>StackAnalytics</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>stackexchange</members>
+        <name>AuthProvider</name>
+    </types>
+    <types>
+        <members>Salesforce_Stackexchange</members>
+        <name>NamedCredential</name>
+    </types>
+    <types>
+        <members>chartJS</members>
+        <name>StaticResource</name>
+    </types>
+    <version>43.0</version>
+</Package>

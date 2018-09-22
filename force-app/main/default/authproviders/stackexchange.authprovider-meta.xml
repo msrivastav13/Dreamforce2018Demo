@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuthProvider xmlns="http://soap.sforce.com/2006/04/metadata">
+    <authorizeUrl>https://stackoverflow.com/oauth</authorizeUrl>
+    <consumerKey>13087</consumerKey>
+    <consumerSecret>X0YuZ8aoUNlTRmVu3nHiOUfojWFLSs1IcEEY92ILatc=</consumerSecret>
+    <friendlyName>stackexchange</friendlyName>
+    <includeOrgIdInIdentifier>false</includeOrgIdInIdentifier>
+    <providerType>OpenIdConnect</providerType>
+    <sendAccessTokenInHeader>true</sendAccessTokenInHeader>
+    <sendClientCredentialsInHeader>false</sendClientCredentialsInHeader>
+    <tokenUrl>https://stackoverflow.com/oauth/access_token</tokenUrl>
+</AuthProvider>

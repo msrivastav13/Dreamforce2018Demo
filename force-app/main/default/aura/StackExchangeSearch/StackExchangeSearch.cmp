@@ -1,0 +1,43 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="StackQuestionsController">
+
+    <aura:attribute type="Map" name="responseMap" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="simpleRecord" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}"/>
+    
+	<div onkeyup="{! c.handleKeyUp }">
+        <lightning:input
+            aura:id="enter-search"
+            name="enter-search"
+            label="Search Stackexchange"
+            type="search"
+        />
+    </div>
+
+    <c:StackAPIService aura:id="stackAPICmp" />
+
+    <force:recordData aura:id="recordLoader"
+        recordId="{!v.recordId}"
+        targetFields="{!v.simpleRecord}"
+        targetError="{!v.recordError}"
+        layoutType="FULL"
+    />
+
+    <lightning:accordion >
+        <aura:iteration var="item" items="{!v.responseMap.items}">
+            <lightning:accordionSection name="{!item.question_id}" label="{!item.title}">
+                <aura:set attribute="actions">
+                    <lightning:buttonMenu aura:id="menu" alternativeText="Show menu" menuAlignment="right" iconSize="x-small" onselect="{! c.handleMenuSelect }">
+                        <lightning:menuItem value="{!item.link + '@@view' + '@@' + item.title}" label="View" />
+                        <lightning:menuItem value="{!item.link + '@@PostToChatter' +'@@' + item.title}" label="Post To Chatter" />
+                    </lightning:buttonMenu>
+                </aura:set>
+                <aura:set attribute="body">
+                    <aura:unescapedHtml value="{!item.body}"/>
+                </aura:set>
+            </lightning:accordionSection>
+        </aura:iteration>
+    </lightning:accordion>
+</aura:component>
