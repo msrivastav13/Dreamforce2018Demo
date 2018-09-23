@@ -58,7 +58,7 @@ public class StackAPIServiceTest {
         List<FeedItem> lstFeedItem = [Select Id ,Body,LinkUrl FROM FeedItem WHERE ParentId=:caseRec.Id];
         System.assertEquals(lstFeedItem.size(),1,'Feed Item Record Created');
         System.assertEquals(lstFeedItem[0].Body,caseRec.Subject,'Subject not populated');
-        System.assertEquals(lstFeedItem[0].LinkUrl,'Link URL is not populated');
+        System.assertEquals(lstFeedItem[0].LinkUrl,'https://salesforce.stackexchange.com/questions/204727/retrieve-elements-created-with-auraiteration','Link URL is not populated');
     }
 
     public static String generateAnswerResponse(){
