@@ -64,6 +64,7 @@ public with sharing class StackAPIService {
         system.debug(endPointURL);
         HttpResponse httpRes = new Http().send(request);
         System.debug('SERVER RESPONSE STATUS CODE ' + httpRes.getStatusCode());
+        System.debug('SERVER RESPONSE BODY ' + httpRes.getBody());
         return httpRes;
     }
 
