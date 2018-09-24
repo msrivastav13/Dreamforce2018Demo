@@ -6,4 +6,4 @@
         </div>
     </div>
     <c:StackAPIService aura:id="stackAPICmp" />
-</aura:component>	
+</aura:component>

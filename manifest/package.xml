@@ -10,6 +10,7 @@
         <members>StackAPIService</members>
         <members>StackExchangeSearch</members>
         <members>StackAnalytics</members>
+        <members>lts_jasmineRunner</members>
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
@@ -22,6 +23,9 @@
     </types>
     <types>
         <members>chartJS</members>
+        <members>lts_jasmine</members>
+        <members>lts_jasmineboot</members>
+        <members>lts_testutil</members>
         <name>StaticResource</name>
     </types>
     <version>43.0</version>
