@@ -2,7 +2,7 @@
 
 if [ $# -lt 1 ]
 then
-    echo Usage: retrievePkg.sh packageName
+    echo Usage: generatePkgXML.sh orgalias packageName
     exit
 fi
 
