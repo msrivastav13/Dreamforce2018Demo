@@ -2,14 +2,18 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Salesforce Stackexchange</fullName>
     <types>
+        <members>SingleRequestMock</members>
         <members>StackAPIService</members>
+        <members>StackAPIServiceTest</members>
         <members>StackQuestionsController</members>
         <name>ApexClass</name>
     </types>
     <types>
+        <members>ServerActionService</members>
         <members>StackAPIService</members>
-        <members>StackExchangeSearch</members>
         <members>StackAnalytics</members>
+        <members>StackExchangeSearch</members>
+        <members>StackExchangeSearchAppTest</members>
         <members>lts_jasmineRunner</members>
         <name>AuraDefinitionBundle</name>
     </types>
@@ -18,10 +22,15 @@
         <name>AuthProvider</name>
     </types>
     <types>
+        <members>Account.Active__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
         <members>Salesforce_Stackexchange</members>
         <name>NamedCredential</name>
     </types>
     <types>
+        <members>StackExchangeSearchAppTest</members>
         <members>chartJS</members>
         <members>lts_jasmine</members>
         <members>lts_jasmineboot</members>
